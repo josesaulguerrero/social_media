@@ -56,7 +56,7 @@ string policyName = "cors";
 builder.Services
     .RegisterCors(policyName)
     .RegisterAutoMapper()
-    .RegisterMongo(secrets.MongoConnection, $"{appSettings.Database}_{country}")
+    .RegisterMongo(secrets.MongoConnection, $"{appSettings.Database}")
     .RegisterAutoMapper()
     .RegisterServices()
     .AddVersionedApiExplorer()
@@ -73,7 +73,7 @@ builder.Services
 
 WebApplication app = builder.Build();
 
-var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
+IApiVersionDescriptionProvider provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 
 if (!app.Environment.IsProduction())
 {
