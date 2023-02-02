@@ -1,0 +1,17 @@
+﻿.swagger-ui .topbar {
+    background-color: #f3a93e;
+}
+
+
+.divLogo {
+    width: 300px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.logoSCSwagger {
+    max-width: 100%;
+    /* object-fit: cover; */
+    display: block;
+    width: 100%;    
+}

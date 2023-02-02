@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>$(NetCoreTargetVersion)</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\$(NetCoreTargetVersion)\demoCRUD.AppServices.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\$(NetCoreTargetVersion)\demoCRUD.AppServices.xml</DocumentationFile>
+  </PropertyGroup>
+	
+    <ItemGroup>
+      <PackageReference Include="AspNetCore.HealthChecks.MongoDb" Version="$(AspNetCoreHealthChecksMongoDb)" />
+      <PackageReference Include="Azure.Identity" Version="$(AzureIdentity)" />
+      <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="$(AzureExtensionsAspNetCoreConfigurationSecrets)" />
+      
+	  <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="$(AspNetCoreHealthChecksRedis)" />
+		
+      <PackageReference Include="AutoMapper.Data" Version="$(AutoMapperData)" />
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="$(AutoMapperExtensionsMicrosoftDependencyInjection)" />
+		
+      <PackageReference Include="credinet.comun.api.core3" Version="$(credinetcomunapicore3)" />
+      <PackageReference Include="credinet-exception-middleware" Version="$(credinetexceptionmiddleware)" />
+      <PackageReference Include="FluentValidation.AspNetCore" Version="$(FluentValidationAspNetCore)" />
+		
+      <PackageReference Include="StackExchange.Redis" Version="$(StackExchangeRedis)" />
+      <PackageReference Include="WindowsAzure.Storage" Version="$(WindowsAzureStorage)" />
+      <PackageReference Include="Elastic.Apm.SerilogEnricher" Version="$(ElasticApmSerilogEnricher)" />
+		
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="$(MicrosoftAspNetCoreMvcNewtonsoftJson)" />
+      <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="$(MicrosoftExtensionsPlatformAbstractions)" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="$(MicrosoftExtensionsConfigurationAzureKeyVault)" />
+      <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="$(MicrosoftVisualStudioAzureContainersToolsTargets)" />
+      
+      <PackageReference Include="OpenTelemetry.Exporter.Zipkin" Version="$(OpenTelemetryExporterZipkin)" />
+      <PackageReference Include="OpenTelemetry.Exporter.Console" Version="$(OpenTelemetryExporterConsole)" />
+      <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="$(OpenTelemetryExtensionsHosting)" />
+      <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="$(OpenTelemetryInstrumentationHttp)" />
+      <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="$(OpenTelemetryInstrumentationAspNetCore)" />
+	  <PackageReference Include="OpenTelemetry.Contrib.Instrumentation.EntityFrameworkCore" Version="$(OpenTelemetryContribInstrumentationEntityFrameworkCore)" />
+		
+      <PackageReference Include="SC.Configuration.Provider.Mongo" Version="$(SCConfigurationProviderMongo)" />
+		
+      <PackageReference Include="Serilog" Version="$(Serilog)" />
+      <PackageReference Include="Serilog.AspNetCore" Version="$(SerilogAspNetCore)" />
+      <PackageReference Include="Serilog.Enrichers.Span" Version="$(SerilogEnrichersSpan)" />
+      <PackageReference Include="Serilog.Extensions.Hosting" Version="$(SerilogExtensionsHosting)" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="$(SerilogSinksConsole)" />
+      <PackageReference Include="Serilog.Sinks.Elasticsearch" Version="$(SerilogSinksElasticsearch)" />
+		
+		
+    </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+    <Folder Include="Automapper\" />
+
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Program.cs"></None>
+    <None Include="Dockerfile"></None>
+    <None Include="appsettings.json" />
+    <None Include="wwwroot\index.html"></None>
+    <None Include="wwwroot\logosc.jpg"></None>
+    <None Include="wwwroot\swagger.png"></None>
+    <None Include="wwwroot\corelogo.png"></None>
+    <None Include="wwwroot\LogoColor.png"></None>
+    <None Include="wwwroot\stylesheet.css"></None>
+    <None Include="wwwroot\swagger.Staging.css"></None>
+    <None Include="wwwroot\swagger.Development.css"></None>
+    <None Include="wwwroot\swagger.Production.css"></None>
+  </ItemGroup>
+  <ItemGroup>
+  <ProjectReference Include="..\..\Domain\Domain.UseCase\Domain.UseCase.csproj" />
+  <ProjectReference Include="..\..\Infrastructure\DrivenAdapters\DrivenAdapter.Files\DrivenAdapter.Files.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\DrivenAdapters\DrivenAdapters.Mongo\DrivenAdapters.Mongo.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\EntryPoints\EntryPoints.ReactiveWeb\EntryPoints.ReactiveWeb.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Helpers\Helpers.Commons\Helpers.Commons.csproj" />
+  </ItemGroup>
+</Project>

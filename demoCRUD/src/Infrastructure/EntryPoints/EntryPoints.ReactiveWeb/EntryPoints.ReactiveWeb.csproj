@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(NetCoreTargetVersion)</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\$(NetCoreTargetVersion)\EntryPoints.ReactiveWeb.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\$(NetCoreTargetVersion)\EntryPoints.ReactiveWeb.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Controllers" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="$(AspNetCoreHealthChecksRedis)" />
+    <PackageReference Include="AutoMapper" Version="$(AutoMapper)" />
+    <PackageReference Include="AutoMapper.Data" Version="$(AutoMapperData)" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="$(AutoMapperExtensionsMicrosoftDependencyInjection)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.AzureKeyVault" Version="$(MicrosoftExtensionsConfigurationAzureKeyVault)" />
+    <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJson)" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="$(MicrosoftAspNetCoreMvcVersioningApiExplorer)" />
+    <PackageReference Include="credinet.comun.api.core3" Version="$(credinetComunApi)" />
+    <PackageReference Include="credinet-exception-middleware" Version="$(credinetexceptionmiddleware)" />
+    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="$(OpenTelemetryExporterConsole)" />
+    <PackageReference Include="OpenTelemetry.Exporter.Zipkin" Version="$(OpenTelemetryExporterZipkin)" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="$(OpenTelemetryInstrumentationAspNetCore)" />
+    <PackageReference Include="WindowsAzure.Storage" Version="$(WindowsAzureStorage)" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controllers\EntityController.cs"></None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Domain\Domain.UseCase\Domain.UseCase.csproj" />
+    <ProjectReference Include="..\..\Helpers\Helpers.Commons\Helpers.Commons.csproj" />
+    <ProjectReference Include="..\..\Helpers\Helpers.ObjectsUtils\Helpers.ObjectsUtils.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,252 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #1E1E1E;
+    font-size: 13px;
+    font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.45;
+    word-wrap: break-word;
+}
+
+/* General & 'Reset' Stuff */
+
+.container {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+/*img {
+    padding-top: 50px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}*/
+
+.Development {
+    color: #FFF;
+    background: #0b4da2;
+}
+
+.Staging {
+    color: black;
+    background: #f3a93e;
+}
+
+.Production {
+    color: #FFF;
+    background: #69b225;
+}
+
+
+section {
+    display: block;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/* Header, <header>
+   header   - container
+   h1       - project name
+   h2       - project description
+*/
+
+#header {
+    /*color: #FFF;
+    background: #89bf04;*/
+    position: relative;
+    border-radius: 10px;
+}
+
+#headerdocumentation {
+    color: #FFF;
+    background: #89bf04;
+    position: relative;
+    border-radius: 10px;
+    height: 112px;
+}
+
+    #headerdocumentation img {
+        text-align: right;
+        float: right;
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+        margin-top: 5px;
+    }
+
+
+#hangcloud {
+    width: 190px;
+    height: 160px;
+    background: url("../images/bannerart03.png");
+    position: absolute;
+    top: 0;
+    right: -30px;
+}
+
+h1, h2 {
+    font-family: "Segoe UI Light", "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1;
+    margin: 0 18px;
+    padding: 0;
+}
+
+#header h1 {
+    font-size: 3.4em;
+    padding-top: 18px;
+    font-weight: normal;
+    margin-left: 15px;
+}
+#headerdocumentation h1 {
+    font-size: 3.4em;
+    padding-top: 18px;
+    font-weight: normal;
+    margin-left: 15px;
+}
+#header h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    padding-bottom: 18px;
+    font-weight: normal;
+}
+#headerdocumentation h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    padding-bottom: 18px;
+    font-weight: normal;
+}
+
+#main_content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bolder;
+}
+
+#header img {
+    text-align: right;
+    float: right;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+
+#main_content h1 {
+    font-size: 1.8em;
+    margin-top: 34px;
+}
+
+    #main_content h1:first-child {
+        margin-top: 30px;
+    }
+
+#main_content h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+p, ul {
+    margin: 11px 18px;
+}
+
+#main_content a {
+    color: #06C;
+    text-decoration: none;
+}
+
+ul {
+    margin-top: 13px;
+    margin-left: 18px;
+    padding-left: 0;
+}
+
+    ul li {
+        margin-left: 18px;
+        padding-left: 0;
+    }
+
+#lpanel {
+    width: 620px;
+    float: left;
+}
+
+.swaggerDevelopment img {
+    border-radius: 20px;
+    filter: hue-rotate(110deg);
+}
+.swaggerStaging img {
+    border-radius: 20px;
+    filter: sepia(101);
+}
+.swaggerProduction img {
+    border-radius: 20px;  
+}
+
+#rpanel ul {
+    list-style-type: none;
+    width: 300px;
+}
+
+    #rpanel ul li {
+        line-height: 1.8em;
+    }
+
+#rpanel {
+    background: #e7e7e7;
+    width: 360px;
+    float: right;
+}
+
+    #rpanel div {
+        width: 300px;
+    }
+
+
+table {
+    color: #333; /* Lighten up font color */
+    font-family: Helvetica, Arial, sans-serif; /* Nicer font */
+    width: 640px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+td, th {
+    border: 1px solid #CCC;
+    height: 30px;
+}
+/* Make cells a bit taller */
+
+th {
+    background: #F3F3F3; /* Light grey background */
+    font-weight: bold; /* Make sure they're bold */
+}
+
+td {
+    background: #FAFAFA; /* Lighter grey background */    
+}
+
+tr:nth-child(even) td {
+    background: #F1F1F1;
+}
+
+tr:nth-child(odd) td {
+    background: #FEFEFE;
+}
+
+tr td:hover {
+    background: #666;
+    color: #FFF;
+} 
