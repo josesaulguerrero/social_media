@@ -35,7 +35,7 @@ namespace DrivenAdapters.Mongo.Entities
         }
 
         /// <summary>
-        /// FindAll
+        /// FindAllAsync
         /// </summary>
         /// <param name="entity"></param>
         /// <returns>

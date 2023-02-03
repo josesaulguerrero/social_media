@@ -8,7 +8,7 @@ namespace Domain.Model.Entities.Gateway
     public interface ITestEntityRepository
     {
         /// <summary>
-        /// FindAll
+        /// FindAllAsync
         /// </summary>
         /// <returns>Entity list</returns>
         List<Entity> FindAll(Entity entity = null);
