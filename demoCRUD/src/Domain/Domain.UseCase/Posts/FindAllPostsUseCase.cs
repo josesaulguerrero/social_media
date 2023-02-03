@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 
 using Domain.Model.Entities;
+using Domain.Model.Entities.Gateway;
 using Domain.Model.Interfaces.Posts;
-using Domain.UseCase.Gateways;
 
 namespace Domain.UseCase.Posts;
 

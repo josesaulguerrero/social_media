@@ -1,4 +1,5 @@
 ﻿using DrivenAdapters.Mongo.Entities;
+
 using MongoDB.Driver;
 
 namespace DrivenAdapters.Mongo
@@ -12,5 +13,7 @@ namespace DrivenAdapters.Mongo
         /// Colleccion de Tipo Contrato
         /// </summary>
         public IMongoCollection<Entity> TipoContrato { get; }
+
+        public IMongoCollection<PostDocument> Posts { get; }
     }
 }

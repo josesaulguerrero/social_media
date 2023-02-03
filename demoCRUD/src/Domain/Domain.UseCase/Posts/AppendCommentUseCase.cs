@@ -2,7 +2,7 @@
 
 using Domain.Model.Entities;
 using Domain.Model.Interfaces.Posts;
-using Domain.UseCase.Gateways;
+using Domain.Model.Entities.Gateway;
 
 namespace Domain.UseCase.Posts;
 

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 using Domain.Model.Entities;
 
-namespace Domain.UseCase.Gateways;
+namespace Domain.Model.Entities.Gateway;
 
 public interface IPostsRepositoryGateway
 {

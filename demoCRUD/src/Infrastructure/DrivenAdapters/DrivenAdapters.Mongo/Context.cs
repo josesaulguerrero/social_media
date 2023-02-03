@@ -1,5 +1,7 @@
 using DrivenAdapters.Mongo.Entities;
+
 using MongoDB.Driver;
+
 using System.Diagnostics.CodeAnalysis;
 
 namespace DrivenAdapters.Mongo
@@ -27,5 +29,7 @@ namespace DrivenAdapters.Mongo
         /// Tipo Contrato Entity
         /// </summary>
         public IMongoCollection<Entity> TipoContrato => _database.GetCollection<Entity>("TipoContrato");
+
+        public IMongoCollection<PostDocument> Posts => _database.GetCollection<PostDocument>("posts");
     }
 }
