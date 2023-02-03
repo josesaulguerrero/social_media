@@ -1,14 +1,19 @@
 ﻿using credinet.comun.api;
 using credinet.exception.middleware.models;
+
 using Domain.Model.Interfaces;
+
 using Helpers.Commons.Exceptions;
 using Helpers.ObjectsUtils.Extensions;
 using Helpers.ObjectsUtils.ResponseObjects;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 using static credinet.comun.negocio.RespuestaNegocio<credinet.exception.middleware.models.ResponseEntity>;
 using static credinet.exception.middleware.models.ResponseEntity;
 
@@ -23,15 +28,12 @@ namespace EntryPoints.ReactiveWeb.Base
     {
         private readonly string country = "co";
 
-        private readonly IManageEventsUseCase _eventsService;
-
         /// <summary>
         /// Creates new instance of <see cref="AppControllerBase{T}"/>
         /// </summary>
         /// <param name="eventsService"></param>
-        public AppControllerBase(IManageEventsUseCase eventsService)
+        public AppControllerBase()
         {
-            _eventsService = eventsService;
         }
 
         /// <summary>
@@ -46,8 +48,6 @@ namespace EntryPoints.ReactiveWeb.Base
             string actionName = ControllerContext.RouteData.Values["action"].ToString();
             string controllerName = ControllerContext.RouteData.Values["controller"].ToString();
             string eventName = $"{controllerName}.{actionName}";
-
-            _eventsService.ConsoleProcessLog(eventName, logId, data: null);
 
             try
             {

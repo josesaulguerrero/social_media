@@ -12,9 +12,6 @@
     <DocumentationFile>bin\Release\$(NetCoreTargetVersion)\EntryPoints.ReactiveWeb.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Controllers" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="AspNetCore.HealthChecks.Redis" Version="$(AspNetCoreHealthChecksRedis)" />
     <PackageReference Include="AutoMapper" Version="$(AutoMapper)" />
     <PackageReference Include="AutoMapper.Data" Version="$(AutoMapperData)" />

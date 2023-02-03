@@ -1,11 +1,15 @@
 using Domain.Model.Entities;
 using Domain.Model.Interfaces;
+
 using EntryPoints.ReactiveWeb.Base;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
 using static credinet.comun.negocio.RespuestaNegocio<credinet.exception.middleware.models.ResponseEntity>;
 using static credinet.exception.middleware.models.ResponseEntity;
 
@@ -27,8 +31,7 @@ namespace EntryPoints.ReactiveWeb.Controllers
         /// </summary>
         /// <param name="testNegocio">The test negocio.</param>
         /// <param name="logger">The logger.</param>
-        public EntityController(IManageEventsUseCase testNegocio, ILogger<EntityController> logger) :
-            base(testNegocio)
+        public EntityController(IManageEventsUseCase testNegocio, ILogger<EntityController> logger)
         {
             _logger = logger;
             this.testNegocio = testNegocio;

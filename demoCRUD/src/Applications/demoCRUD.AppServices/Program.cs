@@ -16,6 +16,8 @@ using demoCRUD.AppServices.Extensions.Health;
 using Serilog;
 using System.IO;
 using System.Linq;
+using Domain.Model.Interfaces.Posts;
+using Domain.UseCase.Posts;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -63,11 +65,25 @@ builder.Services
     .HabilitarVesionamiento()
     .ConfigurarSwaggerConVersiones(builder.Environment, PlatformServices.Default.Application.ApplicationBasePath,
         new string[] { "demoCRUD.AppServices.xml" });
-;
 
 builder.Services
     .AddHealthChecks()
     .AddMongoDb(secrets.MongoConnection, name: "MongoDB");
+
+builder.Services
+    .AddTransient<ICreatePostUseCase, CreatePostUseCase>();
+builder.Services
+    .AddTransient<IFindAllPostsUseCase, FindAllPostsUseCase>();
+builder.Services
+    .AddTransient<IFindPostByIdUseCase, FindPostByIdUseCase>();
+builder.Services
+    .AddTransient<IUpdatePostUseCase, UpdatePostUseCase>();
+builder.Services
+    .AddTransient<IDeletePostUseCase, DeletePostUseCase>();
+builder.Services
+    .AddTransient<IAppendCommentUseCase, AppendCommentUseCase>();
+builder.Services
+    .AddTransient<IRemoveCommentUseCase, RemoveCommentUseCase>();
 
 #endregion Service Configuration
 

@@ -12,10 +12,6 @@
     <DocumentationFile>bin\Release\$(NetCoreTargetVersion)\Domain.Entities.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Entities\Gateway" />
-    <Folder Include="Interfaces\Comments\" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Entities\Gateway\ITestEntityRepository.cs"></None>
     <None Include="Entities\Entity.cs"></None>
   </ItemGroup>
