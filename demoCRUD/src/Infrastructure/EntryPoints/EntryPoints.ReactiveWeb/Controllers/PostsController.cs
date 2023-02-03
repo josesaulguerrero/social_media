@@ -41,11 +41,11 @@ public class PostsController : AppControllerBase<PostsController>
         return await _findAllPostsUseCase.FindAllAsync();
     }
 
-    [HttpGet("{id}")]
-    public async Task<Post> GetAllPostsAsync([FromRoute(Name = "id")] string postId)
-    {
-        return await _findPostByIdUseCase.FindByIdAsync(postId);
-    }
+    //[HttpGet("{id}")]
+    //public async Task<Post> GetAllPostsAsync([FromRoute(Name = "id")] string postId)
+    //{
+    //    return await _findPostByIdUseCase.FindByIdAsync(postId);
+    //}
 
     [HttpPost("create")]
     public async Task<Post> CreatePostAsync([FromBody] Post post)
@@ -53,27 +53,27 @@ public class PostsController : AppControllerBase<PostsController>
         return await _createPostUseCase.CreatePostAsync(post);
     }
 
-    [HttpPut("{id}/update")]
-    public async Task<Post> UpdatePostAsync([FromRoute(Name = "id")] string postId, [FromBody] Post post)
-    {
-        return await _updatePostUseCase.UpdatePostAsync(postId, post);
-    }
+    //[HttpPut("{id}/update")]
+    //public async Task<Post> UpdatePostAsync([FromRoute(Name = "id")] string postId, [FromBody] Post post)
+    //{
+    //    return await _updatePostUseCase.UpdatePostAsync(postId, post);
+    //}
 
-    [HttpDelete("{id}/delete")]
-    public async Task<bool> DeletePostAsync([FromRoute(Name = "id")] string postId)
-    {
-        return await _deletePostUseCase.DeletePostAsync(postId);
-    }
+    //[HttpDelete("{id}/delete")]
+    //public async Task<bool> DeletePostAsync([FromRoute(Name = "id")] string postId)
+    //{
+    //    return await _deletePostUseCase.DeletePostAsync(postId);
+    //}
 
-    [HttpPost("{id}/comments/append")]
-    public async Task<Comment> AppendCommentAsync([FromRoute(Name = "id")] string postId, [FromBody] Comment comment)
-    {
-        return await _appendCommentUseCase.AppendCommentAsync(postId, comment);
-    }
+    //[HttpPost("{id}/comments/append")]
+    //public async Task<Comment> AppendCommentAsync([FromRoute(Name = "id")] string postId, [FromBody] Comment comment)
+    //{
+    //    return await _appendCommentUseCase.AppendCommentAsync(postId, comment);
+    //}
 
-    [HttpPost("{postId}/comments/{commentId}/remove")]
-    public async Task<bool> RemoveCommentAsync([FromRoute(Name = "postId")] string postId, [FromRoute(Name = "commentId")] string commentId)
-    {
-        return await _removeCommentUseCase.RemoveCommentAsync(postId, commentId);
-    }
+    //[HttpPost("{postId}/comments/{commentId}/remove")]
+    //public async Task<bool> RemoveCommentAsync([FromRoute(Name = "postId")] string postId, [FromRoute(Name = "commentId")] string commentId)
+    //{
+    //    return await _removeCommentUseCase.RemoveCommentAsync(postId, commentId);
+    //}
 }

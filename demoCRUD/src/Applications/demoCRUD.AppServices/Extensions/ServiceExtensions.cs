@@ -10,6 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using demoCRUD.AppServices.Automapper;
 using StackExchange.Redis;
 using System;
+using Domain.Model.Interfaces.Posts;
+using Domain.UseCase.Posts;
+using DrivenAdapters.Mongo.Adapters;
 
 namespace demoCRUD.AppServices.Extensions
 {
@@ -102,12 +105,28 @@ namespace demoCRUD.AppServices.Extensions
             #region Adaptadores
 
             services.AddScoped<ITestEntityRepository, EntityAdapter>();
+            services.AddTransient<IPostsRepositoryGateway, PostRepositoryAdapter>();
 
             #endregion Adaptadores
 
             #region UseCases
 
             services.AddScoped<IManageEventsUseCase, ManageEventsUseCase>();
+
+            services
+                .AddTransient<ICreatePostUseCase, CreatePostUseCase>();
+            services
+                .AddTransient<IFindAllPostsUseCase, FindAllPostsUseCase>();
+            services
+                .AddTransient<IFindPostByIdUseCase, FindPostByIdUseCase>();
+            services
+                .AddTransient<IUpdatePostUseCase, UpdatePostUseCase>();
+            services
+                .AddTransient<IDeletePostUseCase, DeletePostUseCase>();
+            services
+                .AddTransient<IAppendCommentUseCase, AppendCommentUseCase>();
+            services
+                .AddTransient<IRemoveCommentUseCase, RemoveCommentUseCase>();
 
             #endregion UseCases
 
